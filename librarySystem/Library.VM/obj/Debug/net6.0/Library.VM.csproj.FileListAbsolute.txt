@@ -1,0 +1,12 @@
+C:\Works\Projects\librarySystem\librarySystem\Library.VM\bin\Debug\net6.0\Library.VM.deps.json
+C:\Works\Projects\librarySystem\librarySystem\Library.VM\bin\Debug\net6.0\Library.VM.dll
+C:\Works\Projects\librarySystem\librarySystem\Library.VM\bin\Debug\net6.0\Library.VM.pdb
+C:\Works\Projects\librarySystem\librarySystem\Library.VM\obj\Debug\net6.0\Library.VM.csproj.AssemblyReference.cache
+C:\Works\Projects\librarySystem\librarySystem\Library.VM\obj\Debug\net6.0\Library.VM.GeneratedMSBuildEditorConfig.editorconfig
+C:\Works\Projects\librarySystem\librarySystem\Library.VM\obj\Debug\net6.0\Library.VM.AssemblyInfoInputs.cache
+C:\Works\Projects\librarySystem\librarySystem\Library.VM\obj\Debug\net6.0\Library.VM.AssemblyInfo.cs
+C:\Works\Projects\librarySystem\librarySystem\Library.VM\obj\Debug\net6.0\Library.VM.csproj.CoreCompileInputs.cache
+C:\Works\Projects\librarySystem\librarySystem\Library.VM\obj\Debug\net6.0\Library.VM.dll
+C:\Works\Projects\librarySystem\librarySystem\Library.VM\obj\Debug\net6.0\refint\Library.VM.dll
+C:\Works\Projects\librarySystem\librarySystem\Library.VM\obj\Debug\net6.0\Library.VM.pdb
+C:\Works\Projects\librarySystem\librarySystem\Library.VM\obj\Debug\net6.0\ref\Library.VM.dll
