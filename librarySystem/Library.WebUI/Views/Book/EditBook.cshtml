@@ -1,0 +1,208 @@
+﻿@model Library.VM.Book.EditCategory
+@{
+    ViewData["Title"] = "EditBook";
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+
+<!-- MAIN-CONTENT -->
+<div class="main-content app-content">
+    <div class="side-app">
+        <!-- CONTAINER -->
+        <div class="main-container container-fluid">
+
+            <!-- PAGE HEADER -->
+            <div class="page-header d-sm-flex d-block">
+                <ol class="breadcrumb breadcrumb-arrow mt-3">
+                    <li><a href="/dashboard/"><i class="fa fa-home"></i> Dashboard</a></li>
+                    <li><a href="/book/index/">books </a></li>
+
+                    <li class="active"><span>@Model.Book.BookName</span></li>
+                </ol>
+
+            </div>
+            <!-- END PAGE HEADER -->
+            <!-- ROW -->
+            <!-- ROW -->
+            <div class="row">
+                <div class="col-lg-9 col-md-9">
+
+
+                    <form id="ProductFormEdit" class="form" action="/Book/EditBook" method="post">
+                        @Html.AntiForgeryToken()
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title"><i class="fa fa-gears"></i> Main Settings </h3>
+                                <input id="BookId" name="BookId" hidden class="form-control" value="@Model.Book.BookId" type="text">
+
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="form-group">
+
+                                        <label class="custom-control custom-checkbox">
+                                            <input type="checkbox" class="custom-control-input"  name="IsAvailable" checked="@Model.Book.IsAvailable.Value">
+                                            <span class="custom-control-label">Is Available </span>
+                                        </label>
+                                    </div>
+
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label tyle="margin-top:-3px !important;">Category</label>
+                                            <select class="form-control form-select select2" id="BookCategory" name="BookCategory" required>
+                                                @foreach (var item in Model.Categories)
+                                                {
+                                                    if (Convert.ToInt32(item.CategoryId) == @Model.Book.BookCategory)
+                                                    {
+                                                        <option selected value="@item.CategoryId">@item.CategoryName</option>
+                                                    }
+                                                    else
+                                                    {
+                                                        <option value="@item.CategoryId">@item.CategoryName</option>
+
+                                                    }
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label tyle="margin-top:-3px !important;">Book Writer</label>
+                                            <select class="form-control form-select select2" id="BookWriter" name="BookWriter" required>
+                                                @foreach (var item in Model.writers)
+                                                {
+                                                    if (Convert.ToInt32(item.WriteId) == @Model.Book.BookWriter)
+                                                    {
+                                                        <option selected value="@item.WriteId">@item.WriterName</option>
+                                                    }
+                                                    else
+                                                    {
+                                                        <option value="@item.WriteId">@item.WriterName</option>
+
+                                                    }
+                                                }
+                                            </select>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label tyle="margin-top:-3px !important;">Book Name</label>
+                                            <input type="text" class="form-control" name="BookName" value="@Model.Book.BookName" />
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label tyle="margin-top:-3px !important;">All Available Books</label>
+                                            <input type="number" class="form-control" name="AvailableNumber" value="@Model.Book.AvailableNumber" />
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label tyle="margin-top:-3px !important;">Book Intro</label>
+                                            <input type="text" class="form-control" name="BookIntro" value="@Model.Book.BookIntro" />
+                                        </div>
+
+                                    </div>
+
+                                    <div class="col-md-12">
+                                        <div class="form-group">
+                                            <label tyle="margin-top:-3px !important;">Book Details</label>
+                                            <textarea class="form-control" name="BookDetails" rows="4">@Model.Book.BookDetails</textarea>
+                                        </div>
+
+                                    </div>
+
+
+                                </div>
+                            </div>
+
+
+
+
+                            <div class="card-footer">
+
+                                <div class="d-flex">
+                                    <div class="ms-auto">
+
+                                        <button id="btnProductEditSave" type="submit" class="btn btn-success btn-sm  saveProductInfo"> <i class="fa fa-check-square-o"></i> Save</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+
+
+
+
+                </div>
+                <div class="col-lg-3 col-md-12">
+
+                    <div class="row">
+
+
+
+                        @*Feature Image*@
+                        <div class="col-lg-12 col-md-12">
+                            <div class="card">
+                                <script>
+                                    function previewFile(input) {
+                                        if (input.files && input.files[0]) {
+                                            var ImageDir = new FileReader();
+                                            ImageDir.onload = function (e) {
+                                                $('#previewImg').attr('src', e.target.result);
+                                            }
+                                            ImageDir.readAsDataURL(input.files[0]);
+                                        }
+                                    }
+
+                                </script>
+
+                                <div class="card-header">
+                                    <h3 class="card-title">Feature Image </h3>
+                                </div>
+                                <div class="card-body">
+
+                                    <form id="Photo" action="/Book/addPhoto" method="post" enctype="multipart/form-data">
+                                        @Html.AntiForgeryToken()
+                                        <img id="previewImg" name="previewImg" class="card-img-top w-100 w-100" src="~/images/@Model.Book.BookPhoto" alt="">
+
+                                        <input name="id" id="id" value="@Model.Book.BookId" hidden />
+
+                                        <span class="btn btn-success fileinput-button mr-1   btn-sm ">
+                                            <i class="fa fa-refresh"></i>
+                                            <span>Change Photo</span>
+                                            <input type="file" accept="image/*" onchange="previewFile(this);" required id="file" name="file">
+                                        </span>
+
+                                        <button type="submit" class="btn btn-secondary  mr-1   btn-sm ">
+                                            <i class="icon-cloud-upload"></i>
+                                            <span>Upload</span>
+                                        </button>
+                                    </form>
+
+
+
+
+                                </div>
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</div>
+<!-- END MAIN-CONTENT -->

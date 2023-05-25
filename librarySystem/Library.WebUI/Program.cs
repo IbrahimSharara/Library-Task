@@ -13,6 +13,8 @@ builder.Services.AddDbContext<librarySystemContext>(
 
 builder.Services.AddScoped<IWriterRepository, WriterRepository>();
 builder.Services.AddScoped<IBookRepository, BookRepository>();
+builder.Services.AddScoped<IBorrowRepository, BorrowRepository>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 var app = builder.Build();
 
 // Configure the HTTP request pipeline.

@@ -16,19 +16,21 @@ namespace Libirary.DAL.Models
         public int BorrowId { get; set; }
         [Column("BookID")]
         public int? BookId { get; set; }
+        [Required]
         [StringLength(250)]
         public string UserName { get; set; }
+        [Required]
         [StringLength(50)]
         public string PhoneNumber { get; set; }
+        [Required]
         [Column("UserNationalID")]
         [StringLength(250)]
         public string UserNationalId { get; set; }
         [Column(TypeName = "datetime")]
-        public DateTime? BorrowFrom { get; set; }
+        public DateTime BorrowFrom { get; set; }
         [Column(TypeName = "datetime")]
-        public DateTime? BorroTo { get; set; }
+        public DateTime BorroTo { get; set; }
         public double? BorrowPrice { get; set; }
-        public double? Penalty { get; set; }
 
         [ForeignKey("BookId")]
         [InverseProperty("TblBorrow")]

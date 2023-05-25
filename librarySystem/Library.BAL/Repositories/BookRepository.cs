@@ -21,7 +21,7 @@ namespace Library.BLL.Repositories
 
         public List<TblBook> GetBookByName(string name)
         {
-            return DB.TblBook.Where(x => x.BookName == name).ToList();
+            return DB.TblBook.Where(x => x.BookName.StartsWith( name)).ToList();
         }
 
         public List<TblBook> GetBookByWriter(int Writer)

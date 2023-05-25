@@ -1,8 +1,139 @@
-﻿@{
+﻿@model Library.VM.MainSite.GetAllDate
+@{
     ViewData["Title"] = "Home Page";
 }
+<section id="hero" class="d-flex justify-content-center align-items-center">
+    <div class="container position-relative" data-aos="zoom-in" data-aos-delay="100">
+        <h1>Learning Today,<br>Leading Tomorrow</h1>
+        <h2>We are team of talented designers making websites with Bootstrap</h2>
+        <a href="courses.html" class="btn-get-started">Get Started</a>
+    </div>
+</section><!-- End Hero -->
+<!-- ======= Trainers Section ======= -->
+<section id="trainers" class="trainers">
+    <div class="container" data-aos="fade-up">
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+        <form asp-action="Get" asp-controller="Book" method="post">
+            <div class="row mb-4">
+                <div class="col-3">
+                    <input type="text" name="BookName" class="form-control" placeholder="Book Name" id="BookName" />
+                </div>
+                <div class="col-3">
+                    <select id="writer" name="writer" class="form-control">
+                        <option value="0">Write</option>
+                        @foreach (var item in Model.Writers)
+                        {
+                            <option value="@item.WriteId">@item.WriterName</option>
+                        }
+                    </select>
+                </div>
+                <div class="col-3">
+                    <select id="Category" name="Category" class="form-control">
+                        <option value="0">Category</option>
+                        @foreach (var item in Model.Categories)
+                        {
+                            <option value="@item.CategoryId">@item.CategoryName</option>
+                        }
+                    </select>
+                </div>
+
+                <div class="col-3">
+                    <input class="btn btn-success" type="submit" value="Search" />
+                </div>
+            </div>
+            </form>
+            
+        
+        <div class="row" data-aos="zoom-in" id="books" data-aos-delay="100">
+            @foreach (var item in Model.Books.Where(x => x.AvailableNumber > 0))
+            {
+
+                <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+                    <div class="member">
+                        <img src="/images/@item.BookPhoto" class="img-fluid" alt="">
+                        <div class="member-content">
+                            <h4>@item.BookName</h4>
+                            <span>Web Development</span>
+                            <p>
+                                @item.BookIntro
+                            </p>
+                            <div class="social">
+                                <a href="/book/details/@item.BookId" class="get-started-btn">Details</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            }
+        </div>
+
+
+    </div>
+</section>
+<!-- End Trainers Section -->
+@section Scripts
+    {
+    <script>
+        $(document).ready(function () {
+            $("#writer").change(function () {
+                var CountryID = $(this).val();
+                debugger;
+                $.ajax(
+                    {
+                        type: "post",
+                        url: "/book/ByWriter?id=" + CountryID,
+                        contentType: "html",
+                        success: function (response) {
+                            debugger;
+                            $("#books").empty();
+                            $("#books").append(response);
+                            //$("#DestinationID").html(result);
+                        }
+                    })
+            })
+
+        })</script>
+    <script>
+        $(document).ready(function () {
+            $("#Category").change(function () {
+                var CountryID = $(this).val();
+                debugger;
+                $.ajax(
+                    {
+                        type: "post",
+                        url: "/book/ByCategory?id=" + CountryID,
+                        contentType: "html",
+                        success: function (response) {
+                            debugger;
+                            $("#books").empty();
+                            $("#books").append(response);
+                            //$("#DestinationID").html(result);
+                        }
+                    })
+            })
+
+        })</script>
+
+    <script>
+        $(document).ready(function () {
+            $('#BookName').on('input', function () {
+                var inputValue = $(this).val();
+                if (inputValue === '') {
+                    location.reload();
+                }
+                debugger;
+                $.ajax(
+                    {
+                        type: "post",
+                        url: "/book/bookName?name=" + inputValue,
+                        contentType: "html",
+                        success: function (response) {
+                            debugger;
+                            $("#books").empty();
+                            $("#books").append(response);
+                            //$("#DestinationID").html(result);
+                        }
+                    })
+            });
+        })</script>
+}

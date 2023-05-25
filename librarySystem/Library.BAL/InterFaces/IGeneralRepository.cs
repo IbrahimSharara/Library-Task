@@ -8,6 +8,6 @@ namespace Library.BLL.InterFaces
         List<T> GetAll();
         Task<int> Delete(int id);
         Task<int> Add(T entity);
-        Task<int> Update(int id, T entity);
+        Task<int> Update( T entity);
     }
 }

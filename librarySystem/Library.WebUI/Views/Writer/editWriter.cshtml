@@ -1,0 +1,155 @@
+﻿@model Library.VM.Writer.ForEditWriter
+@{
+    ViewData["Title"] = "editWriter";
+    Layout = "~/Views/Shared/_Dashboard.cshtml";
+}
+
+<!-- MAIN-CONTENT -->
+<div class="main-content app-content">
+    <div class="side-app">
+        <!-- CONTAINER -->
+        <div class="main-container container-fluid">
+
+            <!-- PAGE HEADER -->
+            <div class="page-header d-sm-flex d-block">
+                <ol class="breadcrumb breadcrumb-arrow mt-3">
+                    <li><a href="/dashboard/"><i class="fa fa-home"></i> Dashboard</a></li>
+                    <li><a href="/writer">Writers </a></li>
+
+                    <li class="active"><span>@Model.Writer.WriterName </span></li>
+                </ol>
+
+            </div>
+
+            <div class="row">
+                <div class="col-lg-9 col-md-9">
+
+
+                    <form id="ProductFormEdit" class="form" action="~/Writer/editWriter" method="post">
+                        @Html.AntiForgeryToken()
+                        <div class="card">
+                            <div class="card-header">
+                                <h3 class="card-title"><i class="fa fa-gears"></i> Main Settings </h3>
+                                <input id="WriteId" name="WriteId" hidden class="form-control" value="@Model.Writer.WriteId" type="text">
+
+                            </div>
+                            <div class="card-body">
+                                <div class="row">
+                                    <div class="col-md-6">
+                                        <div class="form-group">
+                                            <label>Writer Name </label>
+                                            <input id="WriterName" name="WriterName" class="form-control" placeholder="Enter Name..." value="@Model.Writer.WriterName" type="text">
+                                        </div>
+
+                                    </div>
+                                </div>
+
+                            </div>
+                            <div class="card-footer">
+
+                                <div class="d-flex">
+                                    <div class="ms-auto">
+
+                                        <button id="btnProductEditSave" type="submit" class="btn btn-success btn-sm "> <i class="fa fa-check-square-o"></i> Save</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                    </form>
+
+
+                    <!--Books-->
+                    <div id="Books">
+                        <div class="row">
+                            <div class="col-md-12">
+                                <div class="card">
+                                    <div class="card-content">
+                                        <div class="card-body">
+
+                                            <div class="row">
+                                                <div class="col-lg-12">
+                                                    <div class="card">
+                                                        <div class="card-header">
+                                                            <h3 class="card-title">Books </h3>
+                                                        </div>
+                                                        <div class="card-body">
+                                                            <div class="table-responsive">
+                                                                <table id="example2" class="table table-bordered text-nowrap border-bottom table-hover">
+                                                                    <thead class="text-white bg-primary ">
+                                                                        <tr>
+                                                                            <th class="border-bottom-0 text-center">Book Image </th>
+                                                                            <th class="border-bottom-0 text-center">Book </th>
+                                                                            <th class="border-bottom-0">intro </th>
+                                                                            <th class="border-bottom-0">Available </th>
+
+
+                                                                            <th class="border-bottom-0 text-center">Actions</th>
+                                                                        </tr>
+                                                                    </thead>
+                                                                    <tbody>
+                                                                        @foreach (var item in Model.Books.Where(x => x.BookWriter == Model.Writer.WriteId))
+                                                                        {
+
+                                                                            <tr>
+                                                                                <td style="width:85px;">
+                                                                                    <img class="me-3 br-7" src="~/images/@item.BookPhoto" alt="">
+                                                                                </td>
+                                                                                <td>
+                                                                                    @item.BookName
+                                                                                </td>
+                                                                                <td>
+                                                                                    @item.BookIntro
+                                                                                </td>
+
+
+                                                                                <td class="align-middle center" style="text-align:center;">
+
+
+
+                                                                                    @if (item.IsAvailable == true)
+                                                                                    {
+                                                                                        <i class="fa fa-check-circle fa-lg font-medium-4" style="color:green"></i>
+                                                                                    }
+
+                                                                                    @if (item.IsAvailable == false)
+                                                                                    {
+                                                                                        <i class="fa fa-times-circle  fa-lg font-medium-4 " style="color: red"></i>
+                                                                                    }
+                                                                                </td>
+
+
+
+                                                                                <td class="text-center align-middle">
+                                                                                    <div class="btn-group align-top br-7">
+                                                                                        <a href="~/editBook/@item.BookId/" class="btn btn-sm  btn-primary badge"><i class="ti-pencil-alt"></i> Edit</a>
+                                                                                    </div>
+                                                                                </td>
+                                                                            </tr>
+                                                                        }
+                                                                    </tbody>
+                                                                </table>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <!--End Books-->
+                </div>
+            </div>
+
+
+
+
+        </div>
+    </div>
+</div>
+<!-- END MAIN-CONTENT -->

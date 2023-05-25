@@ -1,6 +1,41 @@
-﻿@{
+﻿@model Library.VM.MainSite.Thanks
+@{
     ViewData["Title"] = "Privacy Policy";
 }
-<h1>@ViewData["Title"]</h1>
+<div class="breadcrumbs" data-aos="fade-in">
+    <div class="container">
+        <h2>Thanks Page</h2>
+        <p>Est dolorum ut non facere possimus quibusdam eligendi voluptatem. Quia id aut similique quia voluptas sit quaerat debitis. Rerum omnis ipsam aperiam consequatur laboriosam nemo harum praesentium. </p>
+    </div>
+</div>
+<!-- ======= Cource Details Section ======= -->
+<section id="course-details" class="course-details">
+    <div class="container" data-aos="fade-up">
 
-<p>Use this page to detail your site's privacy policy.</p>
+        <div class="row">
+            <div class="col-lg-8">
+                <img src="/images/@Model.Book.BookPhoto" class="img-fluid" alt="">
+                <h3>@Model.Book.BookName</h3>
+                <p>
+                    @Model.Book.BookDetails
+                </p>
+                
+            </div>
+            <div class="col-lg-4">
+
+                <div class="course-info d-flex justify-content-between align-items-center">
+                    <h5>Namee</h5>
+                    <p><a href="#">@Model.Book.BookName</a></p>
+                </div>
+
+                <div class="course-info d-flex justify-content-between align-items-center">
+                    <h5>Total Price</h5>
+                    <p>$@Model.Price</p>
+                </div>
+
+            </div>
+        </div>
+
+    </div>
+
+</section><!-- End Cource Details Section -->

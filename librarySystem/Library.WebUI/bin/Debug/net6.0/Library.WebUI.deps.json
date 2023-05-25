@@ -2253,6 +2253,9 @@
         }
       },
       "Library.VM/1.0.0": {
+        "dependencies": {
+          "Libirary.DAL": "1.0.0"
+        },
         "runtime": {
           "Library.VM.dll": {}
         }

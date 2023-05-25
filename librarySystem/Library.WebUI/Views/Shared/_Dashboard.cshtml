@@ -34,11 +34,7 @@
     <link href="~/css/demo.css" rel="stylesheet" />
 
     @RenderSection("datatable" , false)
-    @*    @section datatable
-    {
-    <link href="~/lib/datatables/css/dataTables.bootstrap4.min.css" rel="stylesheet" type="text/css" />
-
-    }*@
+    
 </head>
 <body class="app sidebar-mini ltr">
     <!--GLOBAL LOADER -->
@@ -57,10 +53,7 @@
                         <a aria-label="Hide Sidebar" class="app-sidebar__toggle" data-bs-toggle="sidebar" href="javascript:void(0)"></a>
                         <!-- sidebar-toggle-->
                         <!-- Small screen LOGO-->
-                        <a class="logo-horizontal" href="/cms">
-                            <img src="/images/uploads/logo.png" class="header-brand-img main-logo" alt="Travco logo" />
-                            <img src="/images/uploads/logo-white.png" class="header-brand-img darklogo" alt="Travco logo" />
-                        </a>
+                        
                         <!-- End Small screen LOGO -->
                         <!-- SEARCH -->
                         <div class="main-header-center ms-3 d-none d-lg-block">
@@ -112,195 +105,18 @@
                                             </a>
                                         </div>
                                         <!-- End Theme-Layout -->
-                                        <!-- NOTIFICATIONS -->
-                                        <div class="dropdown d-flex notifications nav-link-notify">
+                                        <!--Profile -->
+                                        <div class="dropdown d-flex profile-1">
                                             <a class="nav-link icon" data-bs-toggle="dropdown">
                                                 <i class="fa fa-bell"></i><span class=" pulse"></span>
                                             </a>
-                                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow ">
+                                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow" data-bs-popper="none">
                                                 <div class="drop-heading border-bottom">
                                                     <h6 class="mt-1 mb-0 fs-14 text-dark fw-semibold">
                                                         Notifications
                                                     </h6>
                                                 </div>
-                                                <div class="notifications-menu header-dropdown-scroll">
-                                                    <a class="dropdown-item border-bottom d-flex" href="notify-list.html">
-                                                        <div>
-                                                            <span class="avatar avatar-md fs-20 brround fw-semibold text-center bg-primary-transparent"><i class="fe fe-message-square text-primary"></i></span>
-                                                        </div>
-                                                        <div class="wd-80p ms-3 my-auto">
-                                                            <h5 class="text-dark mb-0 fw-semibold">
-                                                                Gladys Dare  <span class="text-muted">commented on </span>
-                                                                Ecosystems
-                                                            </h5>
-                                                            <span class="notification-subtext">2m ago </span>
-                                                        </div>
-                                                    </a>
-                                                    <a class="dropdown-item border-bottom d-flex" href="notify-list.html">
-                                                        <div>
-                                                            <span class="avatar avatar-md fs-20 brround fw-semibold text-danger bg-danger-transparent"><i class="fe fe-user"></i></span>
-                                                        </div>
-                                                        <div class="wd-80p ms-3 my-auto">
-                                                            <h5 class="text-dark mb-0 fw-semibold">
-                                                                Jackson Wisky
-                                                                <span class="text-muted">
-                                                                    followed
-                                                                    you
-                                                                </span>
-                                                            </h5>
-                                                            <span class="notification-subtext">15 min ago </span>
-                                                        </div>
-                                                    </a>
-                                                    <a class="dropdown-item border-bottom d-flex" href="notify-list.html">
-                                                        <span class="avatar avatar-md fs-20 brround fw-semibold text-center bg-success-transparent"><i class="fe fe-check text-success"></i></span>
-                                                        <div class="wd-80p ms-3 my-auto">
-                                                            <h5 class="text-muted fw-semibold mb-0">
-                                                                You swapped exactly
-                                                                <span class="text-dark fw-bold">2.054 BTC </span> for
-                                                                <span class="text-dark fw-bold">14,124.00 </span>
-                                                            </h5>
-                                                            <span class="notification-subtext">1 day ago </span>
-                                                        </div>
-                                                    </a>
-                                                    <a class="dropdown-item border-bottom d-flex" href="notify-list.html">
-                                                        <div>
-                                                            <span class="avatar avatar-md fs-20 brround fw-semibold text-center bg-warning-transparent"><i class="fe fe-dollar-sign text-warning"></i></span>
-                                                        </div>
-                                                        <div class="wd-80p ms-3 my-auto">
-                                                            <h5 class="text-dark mb-0 fw-semibold">Laurel  <span class="text-muted">donated </span>  <span class="text-success fw-semibold">$100 </span>  <span class="text-muted">for </span> carbon removal </h5>
-                                                            <span class="notification-subtext">15 min ago </span>
-                                                        </div>
-                                                    </a>
-                                                    <a class="dropdown-item d-flex" href="notify-list.html">
-                                                        <div>
-                                                            <span class="avatar avatar-md fs-20 brround fw-semibold text-center bg-info-transparent"><i class="fe fe-thumbs-up text-info"></i></span>
-                                                        </div>
-                                                        <div class="wd-80p ms-3 my-auto">
-                                                            <h5 class="text-dark mb-0 fw-semibold">
-                                                                Sunny Grahm  <span class="text-muted">voted for </span> carbon capture
-                                                            </h5>
-                                                            <span class="notification-subtext">2 hors ago </span>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <div class="text-center dropdown-footer">
-                                                    <a class="btn btn-primary btn-sm btn-block text-center" href="notify-list.html">VIEW ALL NOTIFICATIONS </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End NOTIFICATIONS -->
-                                        <!-- MESSAGE-BOX -->
-                                        <div class="dropdown d-flex message">
-                                            <a class="nav-link icon text-center" data-bs-toggle="dropdown">
-                                                <i class="ri-chat-1-line"></i><span class="pulse-danger"></span>
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
-                                                <div class="drop-heading border-bottom">
-                                                    <h6 class="mt-1 mb-0 fs-14 fw-semibold text-dark">
-                                                        You have 5
-                                                        Messages
-                                                    </h6>
-                                                </div>
-                                                <div class="message-menu message-menu-scroll">
-                                                    <a class="dropdown-item border-bottom d-flex align-items-center" href="chat.html">
-                                                        <img class="avatar avatar-md brround cover-image" src="~/cms/assets/images/users/male/28.jpg" alt="person-image" />
-                                                        <div class="wd-90p ms-2">
-                                                            <div class="d-flex">
-                                                                <h5 class="mb-0 text-dark fw-semibold ">Madeleine </h5>
-                                                                <small class="text-muted ms-auto">
-                                                                    2 min ago
-                                                                </small>
-                                                            </div>
-                                                            <span class="fw-semibold mb-0">Just completed  <span class="text-info">Project </span></span>
-                                                        </div>
-                                                    </a>
-                                                    <a class="dropdown-item border-bottom d-flex align-items-center" href="chat.html">
-                                                        <img class="avatar avatar-md brround me-3 align-self-center cover-image" src="~/cms/assets/images/users/male/32.jpg" alt="person-image" />
-                                                        <div class="wd-90p">
-                                                            <div class="d-flex">
-                                                                <h5 class="mb-0 text-dark fw-semibold ">Anthony </h5>
-                                                                <small class="text-muted ms-auto text-end">
-                                                                    1 hour ago
-                                                                </small>
-                                                            </div>
-                                                            <span class="fw-semibold">Updates the new  <span class="text-info">Task Names </span></span>
-                                                        </div>
-                                                    </a>
-                                                    <a class="dropdown-item border-bottom d-flex align-items-center" href="chat.html">
-                                                        <img class="avatar avatar-md brround me-3 cover-image" src="~/cms/assets/images/users/female/21.jpg" alt="person-image" />
-                                                        <div class="wd-90p">
-                                                            <div class="d-flex">
-                                                                <h5 class="mb-0 text-dark fw-semibold ">Olivia </h5>
-                                                                <small class="text-muted ms-auto text-end">
-                                                                    1 hour ago
-                                                                </small>
-                                                            </div>
-                                                            <span class="fw-semibold">Added a file into  <span class="text-info">Project Name </span></span>
-                                                        </div>
-                                                    </a>
-                                                    <a class="dropdown-item d-flex align-items-center" href="chat.html">
-                                                        <img class="avatar avatar-md brround me-3 cover-image" src="~/cms/assets/images/users/male/33.jpg" alt="person-image" />
-                                                        <div class="wd-90p">
-                                                            <div class="d-flex">
-                                                                <h5 class="mb-0 text-dark fw-semibold ">Sanderson </h5>
-                                                                <small class="text-muted ms-auto text-end">
-                                                                    1 days ago
-                                                                </small>
-                                                            </div>
-                                                            <span class="fw-semibold">Assigned 9 Upcoming  <span class="text-info">Projects </span></span>
-                                                        </div>
-                                                    </a>
-                                                    <a class="dropdown-item border-bottom d-flex align-items-center border-bottom-0" href="chat.html">
-                                                        <img class="avatar avatar-md brround cover-image" src="~/cms/assets/images/users/male/8.jpg" alt="person-image" />
-                                                        <div class="wd-90p ms-2">
-                                                            <div class="d-flex">
-                                                                <h5 class="mb-0 text-dark fw-semibold ">Madeleine </h5>
-                                                                <small class="text-muted ms-auto">
-                                                                    2 min ago
-                                                                </small>
-                                                            </div>
-                                                            <span class="fw-semibold mb-0">Just completed  <span class="text-info">Project </span></span>
-                                                        </div>
-                                                    </a>
-                                                </div>
-                                                <div class="dropdown-divider m-0">
-                                                </div>
-                                                <div class="text-center dropdown-footer">
-                                                    <a class="btn btn-primary btn-sm btn-block text-center" href="chat.html">MARK ALL AS READ </a>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <!-- End MESSAGE-BOX
-                                        <!--Profile -->
-                                        <div class="dropdown d-flex profile-1">
-                                            <a href="javascript:void(0)" data-bs-toggle="dropdown" class="nav-link leading-none d-flex">
-                                                <img src="~/cms/assets/images/users/male/15.jpg" alt="profile-user" class="avatar  profile-user brround cover-image" />
-                                            </a>
-                                            <div class="dropdown-menu dropdown-menu-end dropdown-menu-arrow" data-bs-popper="none">
-                                                <div class="drop-heading">
-                                                    <div class="text-center">
-                                                        <h5 class="text-dark mb-0 fw-semibold">Alison </h5>
-                                                        <span class="text-muted fs-12">Administrator </span>
-                                                    </div>
-                                                </div>
-                                                <a class="dropdown-item text-dark fw-semibold border-top" href="profile.html">
-                                                    <i class="dropdown-icon fe fe-user"></i> Profile
-                                                </a>
-                                                <a class="dropdown-item text-dark fw-semibold" href="email-inbox.html">
-                                                    <i class="dropdown-icon fe fe-mail"></i> Inbox
-                                                    <span class="badge bg-success float-end">3 </span>
-                                                </a>
-                                                <a class="dropdown-item text-dark fw-semibold" href="settings.html">
-                                                    <i class="dropdown-icon fe fe-settings"></i> Settings
-                                                </a>
-                                                <a class="dropdown-item text-dark fw-semibold" href="faq.html">
-                                                    <i class="dropdown-icon fe fe-alert-triangle"></i>
-                                                    Support ?
-                                                </a>
-                                                <a class="dropdown-item text-dark fw-semibold" href="login.html">
-                                                    <i class="dropdown-icon fe fe-log-out"></i> Sign
-                                                    out
-                                                </a>
+                                                @Html.Partial("DashboordNotification")
                                             </div>
                                         </div>
                                         <!-- End Profile -->
@@ -317,15 +133,7 @@
             <div class="sticky">
                 <div class="app-sidebar__overlay" data-bs-toggle="sidebar"></div>
                 <div class="app-sidebar">
-                    <!-- logo-->
-                    <div class="side-header">
-                        <a class="header-brand1" href="/cms">
-                            <img src="/images/uploads/logo.png" class="header-brand-img main-logo" alt="Travco logo" />
-                            <img src="~/images/uploads/logo-white.png" class="header-brand-img darklogo" alt="Travco logo" />
-                            <img src="/images/uploads/logo.png" class="header-brand-img icon-logo" alt="Travco logo" />
-                            <img src="~/images/uploads/logo-white.png" class="header-brand-img icon-logo2" alt="Travco logo" />
-                        </a>
-                    </div>
+                   
                     <!-- End logo-->
                     <div class="main-sidemenu">
                         <div class="slide-left disabled" id="slide-left">
@@ -339,336 +147,17 @@
                                 <h3>Main </h3>
                             </li>
                             <li class="slide">
-                                <a class="side-menu__item has-link" data-bs-toggle="slide" href="~/cms"><i class="fa fa-home"></i><span class="side-menu__label ms-1"> Dashboard </span></a>
+                                <a class="side-menu__item has-link" data-bs-toggle="slide" href="~/dashboard"><i class="fa fa-home"></i><span class="side-menu__label ms-1"> Dashboard </span></a>
                             </li>
-                            <li class="sub-category">
-                                <h3>Modules </h3>
-                            </li>
-                            <!-- Products-->
                             <li class="slide">
-                                <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i class="side-menu__icon si si-handbag"></i><span class="side-menu__label">Products </span><i class="angle fe fe-chevron-right"></i></a>
-                                <ul class="slide-menu">
-                                    <li class="panel sidetab-menu">
-
-                                        <div class="panel-body tabs-menu-body p-0 border-0">
-                                            <div class="tab-content">
-                                                <div class="tab-pane active" id="side5">
-                                                    <ul class="sidemenu-list">
-                                                        <li class="side-menu-label1"><a href="javascript:void(0)">Products </a></li>
-                                                        <li><a href="/cms/adminproducts" class="slide-item"> All Products </a></li>
-                                                        <li><a href="/cms/adminproductspertype/1" class="slide-item"> Packages </a></li>
-                                                        <li><a href="/cms/adminproductspertype/3" class="slide-item"> Day Tours </a></li>
-                                                        <li><a href="/cms/adminproductspertype/4" class="slide-item"> Shore Excursions </a></li>
-                                                        <li><a href="/cms/adminproductspertype/5" class="slide-item"> Transfers </a></li>
-                                                        <li><a href="/cms/adminaddproducts" class="slide-item"> Add New Product </a></li>
-                                                        <li><a href="#" class="slide-item"> Admin Rates </a></li>
-                                                    </ul>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
+                                <a class="side-menu__item has-link" data-bs-toggle="slide" href="~/book"><i class="fa-solid fa-book"></i><span class="side-menu__label ms-1"> Books </span></a>
                             </li>
-                            <!-- End Of Products-->
-                            <!-- Properties-->
                             <li class="slide">
-                                <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i class="side-menu__icon ri-virus-line"></i><span class="side-menu__label">Properties </span><i class="angle fe fe-chevron-right"></i></a>
-                                <ul class="slide-menu mega-slide-menu">
-                                    <li class="panel sidetab-menu">
-                                        <div class="panel-body tabs-menu-body p-0 border-0">
-                                            <div class="tab-content">
-                                                <div class="tab-pane active" id="side9">
-                                                    <ul class="sidemenu-list">
-                                                        <li class="side-menu-label1"><a href="javascript:void(0)">Properties </a></li>
-                                                        <li class="mega-menu">
-                                                            <div class="">
-                                                                <ul>
-                                                                    <li><a href="/cms/adminproperties" class="slide-item"> All Properties </a></li>
-                                                                    <li><a href="/cms/adminaddproperties" class="slide-item"> Add New Property </a></li>
-
-                                                                </ul>
-                                                            </div>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
+                                <a class="side-menu__item has-link" data-bs-toggle="slide" href="~/writer"><i class="fa-solid fa-pen-nib"></i><span class="side-menu__label ms-1"> Writers </span></a>
                             </li>
-                            <!-- End Of Properties-->
-                            <!-- Cruises-->
                             <li class="slide">
-                                <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i class="side-menu__icon fa fa-ship"></i><span class="side-menu__label">Cruises </span><i class="angle fe fe-chevron-right"></i></a>
-                                <ul class="slide-menu">
-                                    <li class="panel sidetab-menu">
-                                        <div class="panel-body tabs-menu-body p-0 border-0">
-                                            <div class="tab-content">
-                                                <div class="tab-pane active" id="side5">
-                                                    <ul class="sidemenu-list">
-                                                        <li class="side-menu-label1"><a href="javascript:void(0)">Cruises </a></li>
-                                                        @*<li><a href="/cms/adminproperties" class="slide-item"> All Cruises</a></li>
-                                                        <li><a href="/cms/adminaddproperties" class="slide-item"> Add New Cruise </a></li>
-                                                        <li><a href="#." class="slide-item"> Cruise Facilities </a></li>
-                                                        <li><a href="#." class="slide-item"> Destinations </a></li>*@
-
-
-
-                                                        <li><a href="/cms/adminCruise" class="slide-item"> All Cruises</a></li>
-                                                        <li><a href="/cms/adminCruiseCategory" class="slide-item"> Cruise Category </a></li>
-                                                        <li><a href="/cms/adminFacilities" class="slide-item"> Cruise Facilities </a></li>
-                                                        <li><a href="/cms/adminAmenities" class="slide-item"> Amanities </a></li>
-                                                        <li><a href="/cms/adminCabins" class="slide-item"> Cabins </a></li>
-                                                        <li><a href="/cms/adminCities" class="slide-item"> Cities </a></li>
-                                                        <li><a href="/cms/adminItineraries" class="slide-item"> Itineraries </a></li>
-                                                        <li><a href="/cms/adminItineraries_Days" class="slide-item"> Itineraries Days</a></li>
-                                                        <li><a href="/cms/adminOperationDates" class="slide-item"> Operation Dates</a></li>
-                                                        <li><a href="/cms/adminOperation_Itineraries" class="slide-item"> Operation Itineraries</a></li>
-                                                    </ul>
-
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
+                                <a class="side-menu__item has-link" data-bs-toggle="slide" href="~/category"><i class="fa-solid fa-circle-exclamation"></i><span class="side-menu__label ms-1"> Categories </span></a>
                             </li>
-                            <!-- End Of Cruses-->
-                            <!-- Media-->
-                            <li class="slide">
-                                <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i class="fa fa-share-alt"></i><span class="side-menu__label ms-1"> Media </span><i class="angle fe fe-chevron-right"></i></a>
-                                <ul class="slide-menu">
-                                    <li class="panel sidetab-menu">
-                                        <div class="panel-body tabs-menu-body p-0 border-0">
-                                            <div class="tab-content">
-                                                <div class="tab-pane active" id="side13">
-                                                    <ul class="sidemenu-list">
-                                                        <li class="side-menu-label1"><a href="javascript:void(0)">Media </a></li>
-                                                        <li><a href="/cms/adminblog" class="slide-item"> Blogs </a></li>
-                                                        <li><a href="/cms/adminnews" class="slide-item"> News </a></li>
-
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-                            <!-- End Of Media-->
-                            <!-- Media-->
-                            <li class="slide">
-                                <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i class="fa fa-share-alt"></i><span class="side-menu__label ms-1"> Destinations </span><i class="angle fe fe-chevron-right"></i></a>
-                                <ul class="slide-menu">
-                                    <li class="panel sidetab-menu">
-                                        <div class="panel-body tabs-menu-body p-0 border-0">
-                                            <div class="tab-content">
-                                                <div class="tab-pane active" id="side13">
-                                                    <ul class="sidemenu-list">
-                                                        <li class="side-menu-label1"><a href="javascript:void(0)">Destinations </a></li>
-                                                        <li><a href="/cms/admindestinations" class="slide-item"> List All Destinations </a></li>
-                                                        <li><a href="/cms/adminActivities" class="slide-item"> List All Activities </a></li>
-
-
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-                            <!-- End Of Media-->
-                            <!-- Requests-->
-                            <li class="slide">
-                                <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i class="fa fa-inbox"></i><span class="side-menu__label ms-1">Requests </span><i class="angle fe fe-chevron-right"></i></a>
-                                <ul class="slide-menu">
-                                    <li class="panel sidetab-menu">
-                                        <div class="panel-body tabs-menu-body p-0 border-0">
-                                            <div class="tab-content">
-                                                <div class="tab-pane active" id="side17">
-                                                    <ul class="sidemenu-list">
-                                                        <li class="side-menu-label1"><a href="javascript:void(0)">Requests </a></li>
-                                                        <li><a href="profile.html" class="slide-item"> NewsLetter </a></li>
-                                                        <li><a href="profile.html" class="slide-item"> Contact Us </a></li>
-
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-
-                                </ul>
-                            </li>
-                            <!--End Of Requests-->
-                            <!--Pages-->
-                            <li class="slide">
-                                <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i class="fa fa-desktop"></i><span class="side-menu__label ms-1">Pages </span><i class="angle fe fe-chevron-right"></i></a>
-                                <ul class="slide-menu">
-                                    <li class="panel sidetab-menu">
-                                        <div class="panel-body tabs-menu-body p-0 border-0">
-                                            <div class="tab-content">
-                                                <div class="tab-pane active" id="side21">
-                                                    <ul class="sidemenu-list">
-                                                        <li class="side-menu-label1"><a href="javascript:void(0)">Pages </a></li>
-                                                        <li><a href="/cms/admineditWhyUs" class="slide-item"> Why Us </a></li>
-                                                        <li><a href="/cms/admineditAffiliatedCompanies" class="slide-item"> Affiliated Companies </a></li>
-                                                        <li><a href="/cms/admineditInternationalOffices" class="slide-item"> International Offices </a></li>
-                                                        <li><a href="/cms/admineditBannerNews" class="slide-item"> News </a></li>
-                                                        <li><a href="/cms/admineditBanner_AboutUs" class="slide-item"> About Us </a></li>
-                                                        <li><a href="/cms/admineditBannerBlog" class="slide-item"> Blog </a></li>
-                                                        <li><a href="/cms/admineditBannerPrivacy" class="slide-item"> Privacy </a></li>
-                                                        <li><a href="/cms/admineditBannerTerms" class="slide-item"> Terms </a></li>
-                                                    </ul>
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-                            <!-- End Of Pages-->
-
-
-
-
-
-                            <li class="sub-category">
-                                <h3>Master Data </h3>
-                            </li>
-                            <!-- Brand-->
-                            <li class="slide">
-                                <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i class="fa fa-share-alt"></i><span class="side-menu__label ms-1"> Brands </span><i class="angle fe fe-chevron-right"></i></a>
-                                <ul class="slide-menu">
-                                    <li class="panel sidetab-menu">
-                                        <div class="panel-body tabs-menu-body p-0 border-0">
-                                            <div class="tab-content">
-                                                <div class="tab-pane active" id="side13">
-                                                    <ul class="sidemenu-list">
-                                                        <li class="side-menu-label1"><a href="javascript:void(0)">Brands </a></li>
-                                                        <li><a href="/cms/adminBrand" class="slide-item"> List All Brands </a></li>
-
-
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-                            <!-- End Of Brand-->
-                            <!-- Slider-->
-                            <li class="slide">
-                                <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i class="fa fa-share-alt"></i><span class="side-menu__label ms-1"> Home Page Banners </span><i class="angle fe fe-chevron-right"></i></a>
-                                <ul class="slide-menu">
-                                    <li class="panel sidetab-menu">
-                                        <div class="panel-body tabs-menu-body p-0 border-0">
-                                            <div class="tab-content">
-                                                <div class="tab-pane active" id="side13">
-                                                    <ul class="sidemenu-list">
-                                                        <li class="side-menu-label1"><a href="javascript:void(0)">Home Page Banners </a></li>
-                                                        <li><a href="/cms/" class="slide-item"> List All Banners </a></li>
-                                                        <li><a href="/cms/" class="slide-item"> Add New Banner </a></li>
-
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-                            <!-- End Of Slider-->
-
-
-                            <li class="sub-category">
-                                <h3>Site Settings </h3>
-                            </li>
-                            <!--First module -->
-                            <li class="slide">
-                                <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)"><i class="side-menu__icon ri-bug-line"></i><span class="side-menu__label">Site</span><i class="angle fe fe-chevron-right"></i></a>
-                                <ul class="slide-menu">
-                                    <li class="panel sidetab-menu">
-                                        <div class="panel-body tabs-menu-body p-0 border-0">
-                                            <div class="tab-content">
-                                                <div class="tab-pane active" id="side25">
-                                                    <ul class="sidemenu-list">
-                                                        <li class="side-menu-label1"><a href="javascript:void(0)">Site </a></li>
-                                                        <li><a href="/cms/adminsocial" class="slide-item"> Social Media Channels </a></li>
-
-                                                        <li><a href="login.html" class="slide-item"> Site Contacts </a></li>
-                                                        <li><a href="login.html" class="slide-item"> Ban IPs </a></li>
-                                                        <li><a href="register.html" class="slide-item"> Old URL Rounting </a></li>
-                                                        <li><a href="forgot-password.html" class="slide-item"> Site Configuration </a></li>
-                                                        <li><a href="login.html" class="slide-item"> Email Settings </a></li>
-                                                        <li><a href="login.html" class="slide-item"> System Logs </a></li>
-                                                        <li><a href="login.html" class="slide-item"> Languages </a></li>
-                                                        <li class="sub-slide">
-                                                            <a class="sub-side-menu__item" data-bs-toggle="sub-slide" href="javascript:void(0)">
-                                                                <span class="sub-side-menu__label">
-                                                                    Documents Manager
-                                                                </span><i class="sub-angle fe fe-chevron-right"></i>
-                                                            </a>
-                                                            <ul class="sub-slide-menu">
-                                                                <li><a href="error400.html" class="sub-slide-item"> List All Document </a></li>
-                                                                <li><a href="error401.html" class="sub-slide-item"> Upload New Document </a></li>
-
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-                            <!--End First module -->
-                            <!--Second module -->
-                            <li class="slide">
-                                <a class="side-menu__item" data-bs-toggle="slide" href="javascript:void(0)">
-                                    <i class="side-menu__icon ri-menu-unfold-fill"></i>
-                                    <span class="side-menu__label">Accounts </span><i class="angle fe fe-chevron-right"></i>
-                                </a>
-                                <ul class="slide-menu">
-                                    <li class="panel sidetab-menu">
-
-                                        <div class="panel-body tabs-menu-body p-0 border-0">
-                                            <div class="tab-content">
-                                                <div class="tab-pane active" id="side29">
-                                                    <ul class="sidemenu-list">
-                                                        <li class="side-menu-label1"><a href="javascript:void(0)">Accounts </a></li>
-                                                        <li><a href="#." class="slide-item">Admins </a></li>
-                                                        <li><a href="#." class="slide-item">Agents </a></li>
-                                                        <li><a href="#." class="slide-item">Customers </a></li>
-                                                        <li><a href="#." class="slide-item">Admins </a></li>
-                                                        <li><a href="#." class="slide-item">Admins </a></li>
-                                                        <li><a href="#." class="slide-item">Admins </a></li>
-
-
-                                                        <li class="sub-slide">
-                                                            <a class="sub-side-menu__item" data-bs-toggle="sub-slide" href="javascript:void(0)"><span class="sub-side-menu__label">Submenu-2 </span><i class="sub-angle fe fe-chevron-right"></i></a>
-                                                            <ul class="sub-slide-menu">
-                                                                <li><a class="sub-slide-item" href="javascript:void(0)">Submenu-2.1 </a></li>
-                                                                <li><a class="sub-slide-item" href="javascript:void(0)">Submenu-2.2 </a></li>
-                                                                <li class="sub-slide2">
-                                                                    <a class="sub-side-menu__item2" href="javascript:void(0)" data-bs-toggle="sub-slide2"><span class="sub-side-menu__label2">Submenu-2.3 </span><i class="sub-angle2 fe fe-chevron-right"></i></a>
-                                                                    <ul class="sub-slide-menu2">
-                                                                        <li><a href="javascript:void(0)" class="sub-slide-item2">Submenu-2.3.1 </a></li>
-                                                                        <li><a href="javascript:void(0)" class="sub-slide-item2">Submenu-2.3.2 </a></li>
-                                                                        <li><a href="javascript:void(0)" class="sub-slide-item2">Submenu-2.3.3 </a></li>
-                                                                    </ul>
-                                                                </li>
-                                                            </ul>
-                                                        </li>
-                                                    </ul>
-
-                                                </div>
-
-                                            </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </li>
-                            <!--End Second module -->
 
                         </ul>
                         <!-- End Side bar Items-->
@@ -810,16 +299,7 @@
     <!-- SCRIPTS CLOSED -->
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
-    @*@section Scripts
-    {
-    <script src="~/lib/datatables/js/jquery.dataTables.min.js" type="text/javascript"></script>
-    <script src="~/lib/datatables/js/datatables.bootstrap4.min.js"></script>
-    <script>
-    $(document).ready(function () {
-    $('#table_id').dataTable({})
-    });
-    </script>
-    }*@
+    
 </body>
 </html>
 

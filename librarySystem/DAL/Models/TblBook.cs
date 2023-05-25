@@ -29,6 +29,8 @@ namespace Libirary.DAL.Models
         public string BookDetails { get; set; }
         public bool? IsAvailable { get; set; }
         public int? AvailableNumber { get; set; }
+        [StringLength(250)]
+        public string BookPhoto { get; set; }
 
         [ForeignKey("BookCategory")]
         [InverseProperty("TblBook")]

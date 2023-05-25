@@ -1,0 +1,21 @@
+﻿@model List<TblBook>
+@foreach (var item in Model.Where(x => x.AvailableNumber > 0))
+{
+
+    <div class="col-lg-4 col-md-6 d-flex align-items-stretch">
+        <div class="member">
+            <img src="/images/@item.BookPhoto" class="img-fluid" alt="">
+            <div class="member-content">
+                <h4>@item.BookName</h4>
+                <span>Web Development</span>
+                <p>
+                    @item.BookIntro
+                </p>
+                <div class="social">
+                    <a href="/book/details/@item.BookId" class="get-started-btn">Details</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+}

@@ -147,7 +147,11 @@
         "frameworks": {
           "net6.0": {
             "targetAlias": "net6.0",
-            "projectReferences": {}
+            "projectReferences": {
+              "C:\\Works\\Projects\\librarySystem\\librarySystem\\DAL\\Libirary.DAL.csproj": {
+                "projectPath": "C:\\Works\\Projects\\librarySystem\\librarySystem\\DAL\\Libirary.DAL.csproj"
+              }
+            }
           }
         },
         "warningProperties": {

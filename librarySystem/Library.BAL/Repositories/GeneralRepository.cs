@@ -32,7 +32,7 @@ namespace Library.BLL.Repositories
         {
             var entity = await GetByID(id);
             DB.Set<T>().Remove(entity);
-            return DB.SaveChanges();
+            return  DB.SaveChanges();
         }
 
         #endregion
@@ -54,10 +54,9 @@ namespace Library.BLL.Repositories
         #endregion
 
         #region Update
-        public async Task<int> Update(int id, T entity)
+        public async Task<int> Update( T entity)
         {
-            var old = await GetByID(id);
-            DB.Set<T>().Update(old);
+            DB.Set<T>().Update(entity);
             return DB.SaveChanges();
         }
         #endregion
