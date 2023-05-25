@@ -7641,22 +7641,6 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
-      "Id": "C:\\Works\\Projects\\librarySystem\\librarySystem\\Library.WebUI\\wwwroot\\images\\Screenshot 2023-05-24 192311.png",
-      "PackagePath": "staticwebassets\\images\\Screenshot 2023-05-24 192311.png"
-    },
-    {
-      "Id": "C:\\Works\\Projects\\librarySystem\\librarySystem\\Library.WebUI\\wwwroot\\images\\_120_2.jpg",
-      "PackagePath": "staticwebassets\\images\\_120_2.jpg"
-    },
-    {
-      "Id": "C:\\Works\\Projects\\librarySystem\\librarySystem\\Library.WebUI\\wwwroot\\images\\_189_Exterior.jpg",
-      "PackagePath": "staticwebassets\\images\\_189_Exterior.jpg"
-    },
-    {
-      "Id": "C:\\Works\\Projects\\librarySystem\\librarySystem\\Library.WebUI\\wwwroot\\images\\_233_DSC01117.jpg",
-      "PackagePath": "staticwebassets\\images\\_233_DSC01117.jpg"
-    },
-    {
       "Id": "C:\\Works\\Projects\\librarySystem\\librarySystem\\Library.WebUI\\wwwroot\\images\\loader.svg",
       "PackagePath": "staticwebassets\\images\\loader.svg"
     },
