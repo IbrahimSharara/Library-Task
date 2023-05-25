@@ -23,15 +23,15 @@
                     <li class="active"><span>Borrowed Books </span></li>
                 </ol>
                 @*<div class="ms-auto">
-                    <div>
+                <div>
 
-                        <a href="/Slider/CMS_AddSlider" class="btn bg-warning-transparent text-warning btn-sm" data-bs-target="#exampleModal3" data-bs-toggle="modal" title="Add New Slider" data-bs-placement="bottom" data-bs-original-title="Add New">
-                            <span>
-                                <i class="fa fa-plus"></i>
-                            </span>
-                        </a>
+                <a href="/Slider/CMS_AddSlider" class="btn bg-warning-transparent text-warning btn-sm" data-bs-target="#exampleModal3" data-bs-toggle="modal" title="Add New Slider" data-bs-placement="bottom" data-bs-original-title="Add New">
+                <span>
+                <i class="fa fa-plus"></i>
+                </span>
+                </a>
 
-                    </div>
+                </div>
                 </div>*@
             </div>
 
@@ -64,7 +64,7 @@
 
                                             <tr>
                                                 <td style="width:85px;">
-                                                    <img class="me-3 br-7" src="~/images/uploads/@item.Book.BookName" alt="">
+                                                    <img class="me-3 br-7" src="~/images/@item.Book.BookPhoto" alt="">
                                                 </td>
                                                 <td>
                                                     @item.Book.BookName
@@ -83,20 +83,43 @@
                                                 <td class="align-middle center" style="text-align:center;">
                                                     @item.BorrowFrom.ToShortDateString()
                                                 </td>
-                                                
+
                                                 <td class="align-middle center" style="text-align:center;">
                                                     @item.BorroTo.ToShortDateString()
                                                 </td>
-                                                <td class="align-middle center" style="text-align:center;">
-                                                    @{
-                                                        var delay = DateTime.Now - item.BorroTo;
-                                                    }
-                                                    @delay.Days
-                                                </td>
 
-                                                <td class="align-middle center" style="text-align:center;">
-                                                    @(delay.Days * 15 + item.BorrowPrice)
-                                                </td>
+                                                @{
+                                                    var delay = DateTime.Now - item.BorroTo;
+                                                }
+                                                @if (delay.Days <= 0)
+                                                {
+                                                    <td class="align-middle center" style="text-align:center;">
+                                                        0 Day
+                                                    </td>
+                                                }
+                                                else
+                                                {
+                                                    <td class="align-middle center" style="text-align:center;">
+                                                        @delay.Days Days
+                                                    </td>
+                                                }
+
+
+
+                                                @if (delay.Days >= 0)
+                                                {
+                                                    <td class="align-middle center" style="text-align:center;">
+                                                        @(delay.Days * 15 + item.BorrowPrice)
+                                                    </td>
+                                                }
+
+                                                else
+                                                {
+                                                    <td class="align-middle center" style="text-align:center;">
+                                                        @(item.BorrowPrice)
+                                                    </td>
+                                                }
+
 
                                                 <td class="text-center align-middle">
                                                     <div class="btn-group align-top br-7">
