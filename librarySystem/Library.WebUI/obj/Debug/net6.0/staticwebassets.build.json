@@ -1,6 +1,6 @@
 {
   "Version": 1,
-  "Hash": "hF7TrbSJ7lVF7q5TNz9P2g1X16HRAykZEKiKdTb/T8c=",
+  "Hash": "GW/SNfq+fyTLwMc6M+pB2TIA/930iKAYuqeSZBYQT34=",
   "Source": "Library.WebUI",
   "BasePath": "_content/Library.WebUI",
   "Mode": "Default",
@@ -32604,6 +32604,23 @@
       "CopyToOutputDirectory": "Never",
       "CopyToPublishDirectory": "PreserveNewest",
       "OriginalItemSpec": "wwwroot\\images\\loader.svg"
+    },
+    {
+      "Identity": "C:\\Works\\Projects\\librarySystem\\librarySystem\\Library.WebUI\\wwwroot\\images\\Screenshot 2023-05-24 192311.png",
+      "SourceId": "Library.WebUI",
+      "SourceType": "Discovered",
+      "ContentRoot": "C:\\Works\\Projects\\librarySystem\\librarySystem\\Library.WebUI\\wwwroot\\",
+      "BasePath": "_content/Library.WebUI",
+      "RelativePath": "images/Screenshot 2023-05-24 192311.png",
+      "AssetKind": "All",
+      "AssetMode": "All",
+      "AssetRole": "Primary",
+      "RelatedAsset": "",
+      "AssetTraitName": "",
+      "AssetTraitValue": "",
+      "CopyToOutputDirectory": "Never",
+      "CopyToPublishDirectory": "PreserveNewest",
+      "OriginalItemSpec": "wwwroot\\images\\Screenshot 2023-05-24 192311.png"
     },
     {
       "Identity": "C:\\Works\\Projects\\librarySystem\\librarySystem\\Library.WebUI\\wwwroot\\js\\aos.js",
