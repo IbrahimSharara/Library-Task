@@ -1,0 +1,7 @@
+﻿@model List<TblBorrow>
+@foreach (var item in Model.Where(x => x.BorroTo < DateTime.Now))
+{
+    <a class="dropdown-item text-dark fw-semibold border-top" href="tel:@item.PhoneNumber">
+        <i class="dropdown-icon fe fe-user"></i> @item.UserName
+    </a>
+}

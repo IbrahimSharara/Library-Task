@@ -7,14 +7,16 @@ namespace Library.WebUI.Controllers
 {
     public class CategoryController : Controller
     {
-        public CategoryController(ICategoryRepository category , IBookRepository book)
+        public CategoryController(ICategoryRepository category , IBookRepository book , IBorrowRepository borrow)
         {
             Category = category;
             Book = book;
+            Borrow = borrow;
         }
 
         public ICategoryRepository Category { get; }
         public IBookRepository Book { get; }
+        public IBorrowRepository Borrow { get; }
 
         #region All
         public IActionResult Index()
@@ -24,7 +26,11 @@ namespace Library.WebUI.Controllers
         }
         #endregion
 
-
+        public IActionResult DashboordNotification()
+        {
+            var allBorrowedBooks = Borrow.GetAllWithBooks();
+            return PartialView(allBorrowedBooks);
+        }
 
         #region Add new
         [Route("/addnewCategory")]

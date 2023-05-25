@@ -9,11 +9,13 @@ namespace Library.WebUI.Controllers
     {
         public IWriterRepository Writer { get; }
         public IBookRepository Book { get; }
+        public IBorrowRepository Borrow { get; }
 
-        public WriterController(IWriterRepository writer , IBookRepository book)
+        public WriterController(IWriterRepository writer , IBookRepository book , IBorrowRepository borrow)
         {
             Writer = writer;
             Book = book;
+            Borrow = borrow;
         }
         #region All
         public IActionResult Index()
@@ -24,6 +26,11 @@ namespace Library.WebUI.Controllers
         #endregion
 
 
+        public IActionResult DashboordNotification()
+        {
+            var allBorrowedBooks = Borrow.GetAllWithBooks();
+            return PartialView(allBorrowedBooks);
+        }
 
         #region Add new
         [Route("/addnewWriter")]

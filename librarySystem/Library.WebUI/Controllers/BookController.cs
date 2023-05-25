@@ -7,16 +7,18 @@ namespace Library.WebUI.Controllers
 {
     public class BookController : Controller
     {
-        public BookController(IBookRepository book , ICategoryRepository category , IWriterRepository writer)
+        public BookController(IBookRepository book , ICategoryRepository category , IWriterRepository writer , IBorrowRepository borrow)
         {
             Book = book;
             Category = category;
             Writer = writer;
+            Borrow = borrow;
         }
 
         public IBookRepository Book { get; }
         public ICategoryRepository Category { get; }
         public IWriterRepository Writer { get; }
+        public IBorrowRepository Borrow { get; }
         #region All
         public IActionResult Index()
         {
@@ -24,6 +26,11 @@ namespace Library.WebUI.Controllers
             return View(model);
         }
         #endregion
+        public IActionResult DashboordNotification()
+        {
+            var allBorrowedBooks = Borrow.GetAllWithBooks();
+            return PartialView(allBorrowedBooks);
+        }
 
         #region Add new
         public async Task<IActionResult> AddBook()
