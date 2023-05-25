@@ -26,11 +26,6 @@ namespace Library.WebUI.Controllers
             return View(model);
         }
         #endregion
-        public IActionResult DashboordNotification()
-        {
-            var allBorrowedBooks = Borrow.GetAllWithBooks();
-            return PartialView(allBorrowedBooks);
-        }
 
         #region Add new
         public async Task<IActionResult> AddBook()

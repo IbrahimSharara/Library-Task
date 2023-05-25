@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿@using Library.BLL.Repositories;
+<!DOCTYPE html>
 <html lang="en" dir="ltr">
 <head>
 
@@ -116,7 +117,11 @@
                                                         Notifications
                                                     </h6>
                                                 </div>
-                                                @*@Html.Partial("DashboordNotification")*@
+                                                @{
+                                                    librarySystemContext db = new librarySystemContext();
+                                                    var bor = db.TblBorrow.ToList();
+                                                }
+                                                @Html.Partial("DashboordNotification",bor)
                                             </div>
                                         </div>
                                         <!-- End Profile -->

@@ -26,11 +26,6 @@ namespace Library.WebUI.Controllers
         }
         #endregion
 
-        public IActionResult DashboordNotification()
-        {
-            var allBorrowedBooks = Borrow.GetAllWithBooks();
-            return PartialView(allBorrowedBooks);
-        }
 
         #region Add new
         [Route("/addnewCategory")]
